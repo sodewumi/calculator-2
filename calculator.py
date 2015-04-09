@@ -27,8 +27,9 @@ def calculate():
                 print "I don't understand"
 
         elif len(expression) == 3:
-            opr1 = int(expression[1])
-            opr2 = int(expression[2])
+            opr1 = float(expression[1])
+            opr2 = float(expression[2])
+
             if symbol == 'pow':
                 print pow(opr1, opr2)
 
