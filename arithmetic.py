@@ -1,19 +1,34 @@
-def add(num1, num2):
-    return num1 + num2
+def add(exp):
+    sum = 0
+    for i in exp:
+        sum += float(i)
+    return sum
 
 
-def subtract(num1, num2):
-    return num1 - num2
+def subtract(exp):
+    minus = 0
+    for i in exp:
+        minus -= float(i)
+    return minus 
 
 
-def multiply(num1, num2):
-    return num1 * num2
+def multiply(exp):
+    mult = 1
+    for i in exp:
+        mult *= float(i)
+    return mult
 
 
-def divide(num1, num2):
-    # Need to turn at least argument to float for division to
-    # not be integer division
-    return num1 / num2
+def divide(exp):
+    pre_div = None
+    div = 1
+    for i in range(0, len(exp)-1):
+        if pre_div == None:
+            div = float(exp[i]) / float(exp[i+1])
+            pre_div = div
+        else:
+            div = (pre_div / float(exp[i])) / float(exp[i+1])
+    return div
 
 
 def square(num1):

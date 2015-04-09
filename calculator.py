@@ -26,9 +26,10 @@ def calculate():
             else:
                 print "I don't understand"
 
-        elif len(expression) == 3:
+        elif len(expression) >= 3:
             opr1 = float(expression[1])
             opr2 = float(expression[2])
+            lst_num = expression[1:]
 
             if symbol == 'pow':
                 print pow(opr1, opr2)
@@ -37,13 +38,13 @@ def calculate():
                 print mod(opr1, opr2)
             
             elif symbol == '+':
-                print add(opr1, opr2)
+                print add(lst_num)
             elif symbol == '-':
-                print substract(opr1, opr2)
+                print subtract(lst_num)
             elif symbol == '*':
-                print multiply(opr1, opr2)
+                print multiply(lst_num)
             elif symbol == '/':
-                print divide(opr1, opr2)
+                print divide(lst_num)
             else:
                 print "I don't understand"
 
@@ -52,6 +53,7 @@ def calculate():
                 quit = True
                 break
             print "I don't understand"
+
 
 calculate()
 
