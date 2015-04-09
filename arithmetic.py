@@ -20,15 +20,14 @@ def multiply(exp):
 
 
 def divide(exp):
-    pre_div = None
-    div = 1
-    for i in range(0, len(exp)-1):
-        if pre_div == None:
-            div = float(exp[i]) / float(exp[i+1])
-            pre_div = div
-        else:
-            div = (pre_div / float(exp[i])) / float(exp[i+1])
-    return div
+    result = float(exp[0]) / float(exp[1])
+
+    if len(exp) == 2:
+        return result
+
+    for i in range(2, len(exp)):
+        result = result / float(exp[i])
+    return result
 
 
 def square(num1):
